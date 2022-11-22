@@ -1,0 +1,71 @@
+//1)
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <locale.h>
+int main()
+{
+	int m, n, s=0, t=0;
+	setlocale(LC_ALL, "RUS");
+	puts("Введите два значения: ");
+	scanf("%d", &m);
+	scanf("%d", &n);
+	for (int i = m; i <= n; i++)
+	{
+		s=s+i;
+		t=t+1;
+		printf("Выполнено %d раз\n", t);
+	}
+	printf("Результат %d\n", s);
+	return 0;
+}
+
+//2)
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+void main()
+{
+	double h;
+	double x;
+	double y;
+
+	setlocale(LC_ALL, "rus");
+
+	printf("Введите шаг\n");
+	scanf("%lf",&h);
+	printf("Введеный шаг %lf", h);
+
+	for (x = 2; x < 4.1000000000000000000000000000001;) {
+		y = fabs(log10(x)) - pow((x - 2), 2);
+		printf(" |%.2lf|  |%.2lf|\n ", x, y);
+		x += h;
+	}
+}
+
+//3)
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+void main()
+{
+	float z1;
+	float z2 = 0;
+	float n;
+	float x = 1/2;
+	float z;
+	float y;
+
+	setlocale(LC_ALL,"rus");
+	
+	puts("Введите n");
+	scanf("%f",&n);
+	for (y = 0; y < n; y++) {
+		z1 = (1 - x) * (1 - x/2);
+		z2 = z2 + z1;
+	}
+	z = (1 - x) * (1 - x / 2) + z2;
+	printf("%f", z);
+}

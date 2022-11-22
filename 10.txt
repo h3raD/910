@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+#define _CRT_SECURE_NO_DERPRECATE
+#define _USE_MATH_DEFINES
+
+double fa(double x) {
+	double y;
+	if (x <= 3) {
+		y = pow(x, 2) - 3 * x + 9;
+	}
+	else {
+		y = (1 / (pow(x, 3) + 3));
+	}
+	return y;
+}
+double fb(double x) {
+	double y;
+	y = x * exp(sin(pow(x, 2)));
+	return y;
+}
+void main() {
+	double x;
+	double y;
+	scanf("%lf", &x);
+	printf("fa(x)=%lf,fb(x)=%lf", fa(x), fb(x));
+	printf("%lf %lf %lf", fa(x) * fb(x), pow(fa(x), 2) - pow(fb(x), 2), 2 * (fa(x) + fb(x)));
+	return 0;
+}
